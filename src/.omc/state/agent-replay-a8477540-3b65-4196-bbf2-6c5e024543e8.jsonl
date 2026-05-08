@@ -1,0 +1,7 @@
+{"t":0,"agent":"system","event":"keyword_detected","keyword":"autopilot"}
+{"t":0,"agent":"system","event":"mode_change","mode_from":"none","mode_to":"autopilot"}
+{"t":0,"agent":"system","event":"skill_invoked","skill_name":"oh-my-claudecode:autopilot"}
+{"t":0,"agent":"system","event":"skill_invoked","skill_name":"oh-my-claudecode:cancel"}
+{"t":0,"agent":"ad36f1a","agent_type":"unknown","event":"agent_stop","success":true}
+{"t":0,"agent":"a0748fe","agent_type":"unknown","event":"agent_stop","success":true}
+{"t":0,"agent":"ad1168b","agent_type":"unknown","event":"agent_stop","success":true}

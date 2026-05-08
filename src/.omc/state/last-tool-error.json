@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"ls -la /home/qbhan/Repos/Difix3D/.omc/ 2>&1; echo \\\"---specs---\\\"; ls /home/qbhan/Repos/Difix3D/.omc/specs/ 2>/dev/null; echo \\\"---plans---\\\"; ls /home/qbhan/Repos/Difix3D/.omc/plans/ 2>/d...",
+  "error": "Exit code 2\ntotal 16\ndrwxrwxr-x 3 qbhan qbhan 4096  5월  7 23:28 .\ndrwxrwxr-x 8 qbhan qbhan 4096  5월  7 23:20 ..\n-rw------- 1 qbhan qbhan 2840  5월  7 23:26 project-memory.json\ndrwxrwxr-x 3 qbhan qbhan 4096  5월  7 23:22 state\n---specs---\n---plans---",
+  "timestamp": "2026-05-07T14:28:20.669Z",
+  "retry_count": 1
+}

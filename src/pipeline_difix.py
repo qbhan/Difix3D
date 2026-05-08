@@ -20,6 +20,23 @@ import torch
 from packaging import version
 from transformers import CLIPImageProcessor, CLIPTextModel, CLIPTokenizer, CLIPVisionModelWithProjection
 
+import diffusers.loaders as _diffusers_loaders
+if not hasattr(_diffusers_loaders, "FromOriginalVAEMixin") and hasattr(_diffusers_loaders, "FromOriginalModelMixin"):
+    _diffusers_loaders.FromOriginalVAEMixin = _diffusers_loaders.FromOriginalModelMixin
+
+from diffusers.models.modeling_utils import ModelMixin as _ModelMixin
+from diffusers.loaders import PeftAdapterMixin as _PeftAdapterMixin
+for _name in (
+    "active_adapters", "add_adapter", "delete_adapters", "disable_adapters",
+    "disable_lora", "enable_adapters", "enable_lora", "enable_lora_hotswap",
+    "fuse_lora", "load_lora_adapter", "save_lora_adapter", "set_adapter",
+    "set_adapters", "unfuse_lora", "unload_lora",
+):
+    if not hasattr(_ModelMixin, _name) and hasattr(_PeftAdapterMixin, _name):
+        setattr(_ModelMixin, _name, getattr(_PeftAdapterMixin, _name))
+if not hasattr(_ModelMixin, "_hf_peft_config_loaded"):
+    _ModelMixin._hf_peft_config_loaded = False
+
 from diffusers.configuration_utils import FrozenDict
 from diffusers.image_processor import PipelineImageInput, VaeImageProcessor
 from diffusers.loaders import FromSingleFileMixin, IPAdapterMixin, LoraLoaderMixin, TextualInversionLoaderMixin
